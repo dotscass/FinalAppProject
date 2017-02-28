@@ -1,0 +1,54 @@
+<ion-view>
+<ion-header-bar class="bar bar-header bar-stable" >
+    <h1 class="title">{{reminder.title}}</h1>
+  </ion-header-bar>
+  <ion-content class=bar-calm>
+
+     
+      <div>
+      <div class="item item-divider bar bar-header bar-calm">
+        Title
+      </div>
+      
+
+      <div>
+        <input  type="text" ng-model="reminder.title"></input>
+      </div>
+
+      <div class="item item-divider bar bar-header bar-calm">
+        Description
+      </div>
+
+      <div>
+        <textarea placeholder="Comments" ng-model="reminder.description"></textarea>
+      </div>
+
+      <div class="item item-divider bar bar-header bar-calm" >
+        Priority
+      </div>
+
+      <div>
+          <ion-radio ng-model="reminder.priority" ng-change="prioritych(reminder.priority)" ng-value="'High'">High</ion-radio>
+          <ion-radio ng-model="reminder.priority" ng-change="prioritych(reminder.priority)" ng-value="'Medium'">Medium</ion-radio>
+          <ion-radio ng-model="reminder.priority" ng-change="prioritych(reminder.priority)" ng-value="'Low'">Low</ion-radio>
+      </div>
+
+      <div class="item item-divider bar bar-header bar-calm">
+        Complete
+      </div>
+      <div>
+      <ion-toggle toggle-class="toggle-balanced" ng-model="reminder.complete" ng-change="done(reminder.complete)" ng-checked="false">Complete</ion-toggle>
+      </div>
+      <button ng-if="submit" class="button button-positive" ng-click="submitb()">Submit
+      </button>
+      <button  ng-if="!submit" class="button button-positive" ng-click="update()">Update
+      </button>
+      <button ng-if="!submit" class="button button-positive" ng-click="delete()">Delete
+      </button>
+      </div>
+
+      
+   
+
+    </ion-content>  
+  </ion-view>
